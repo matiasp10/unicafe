@@ -1,3 +1,5 @@
+import StatisticLine from './StatisticLine';
+
 // eslint-disable-next-line react/prop-types
 function Statistics({ bad, good, neutral }) {
   if (bad + good + neutral === 0) {
@@ -6,16 +8,18 @@ function Statistics({ bad, good, neutral }) {
     return (
       <div>
         <h2>Statistics</h2>
-        <span>Good: {good}</span> <br />
-        <span>Neutral: {neutral}</span>
-        <br />
-        <span>Bad: {bad}</span>
-        <br />
-        <span>Total: {bad + good + neutral}</span>
-        <br />
-        <span>Promedio: {(good - bad) / (bad + good + neutral)}</span>
-        <br />
-        <span>Positive: {(good * 100) / (bad + good + neutral)} %</span>
+        <StatisticLine text={'Good'} value={good} />
+        <StatisticLine text={'Bad'} value={neutral} />
+        <StatisticLine text={'Neutral'} value={bad} />
+        <StatisticLine text={'Total'} value={bad + good + neutral} />
+        <StatisticLine
+          text={'Average'}
+          value={(good - bad) / (bad + good + neutral)}
+        />
+        <StatisticLine
+          text={'Positive'}
+          value={(good * 100) / (bad + good + neutral)}
+        />
       </div>
     );
   }
