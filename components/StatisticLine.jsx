@@ -1,9 +1,10 @@
 // eslint-disable-next-line react/prop-types
 function StatisticLine({ text, value }) {
   return (
-    <p>
-      {text}: {value}
-    </p>
+    <tr>
+      <td>{text}</td>
+      <td> {value}</td>
+    </tr>
   );
 }
 
