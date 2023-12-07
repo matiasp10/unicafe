@@ -19,6 +19,11 @@ function App() {
       <br />
       <span>Bad: {bad}</span>
       <br />
+      <span>Total: {bad + good + neutral}</span>
+      <br />
+      <span>Promedio: {(good - bad) / (bad + good + neutral)}</span>
+      <br />
+      <span>Positive: {(good * 100) / (bad + good + neutral)} %</span>
     </>
   );
 }
